@@ -26,6 +26,12 @@ class DualSmallBoomConfig extends Config(
   new boom.common.WithNSmallBooms(2) ++                          // 2 boom cores
   new chipyard.config.AbstractConfig)
 
+class DromajoDualSmallBoomConfig extends Config(
+  new chipyard.harness.WithSimDromajoBridge ++                   // attach Dromajo
+  new chipyard.config.WithTraceIO ++                             // enable the traceio
+  new boom.common.WithNSmallBooms(2) ++                          // 2 boom cores
+  new chipyard.config.AbstractConfig)
+
 class HwachaLargeBoomConfig extends Config(
   new chipyard.config.WithHwachaTest ++
   new hwacha.DefaultHwachaConfig ++                              // use Hwacha vector accelerator
